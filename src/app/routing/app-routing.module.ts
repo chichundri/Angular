@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -26,7 +26,6 @@ const routes: Routes = [
   ],
   declarations: [],
   exports : [ RouterModule ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers : [BookService]
 })
 export class AppRoutingModule { }
