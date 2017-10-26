@@ -1,0 +1,11 @@
+<div class="employee">
+  <form #empForm="ngForm" (ngSubmit) = "onFormSubmit(empForm)">
+    <p>Name : <input type="text" name="name" [ngModel]="emp.name" ></p>
+    <p>Age:<input type="text" name="age" [ngModel]="emp.age"></p>  
+    <button>Submit</button>
+  </form>
+</div>
+<div class="message">
+  <p>Message : <input type="text" [(ngModel)] = "msg" ></p>
+</div>
+<app-emp [employee] = "emp" [message] = "msg" ></app-emp>

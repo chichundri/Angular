@@ -19,7 +19,32 @@
   <!-- <app-view-children></app-view-children> -->
   <!-- <app-parent></app-parent> -->
 
-  <app-team-management></app-team-management>
+  <!-- <app-team-management></app-team-management> -->
+  <!-- Error
+    <app-simple-changes></app-simple-changes> 
+  -->
+  <!-- <app-mypost-banner></app-mypost-banner> -->
+
+  <!-- <app-user></app-user> -->
+
+  <!-- <app-article></app-article> -->
+  <!-- <app-syntax></app-syntax> -->
+  <!-- <app-attribute></app-attribute>  -->
+
+  <!-- <app-sample></app-sample> -->
+
+  <nav [ngClass] = "'menu'">
+     <a routerLink="/home" routerLinkActive="active-link">Home</a> | 
+     <a routerLink="/add-book" routerLinkActive="active-link">Add Book</a> | 
+     <a routerLink="/manage-book" routerLinkActive="active-link">Manage Book</a>
+  </nav>  
+  <div>	
+    <router-outlet></router-outlet>	
+  </div> 
+
+
+
+
   
 
 
