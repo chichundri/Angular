@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sample',
@@ -6,14 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sample.component.css']
 })
 export class SampleComponent implements OnInit {
+  
   constructor() { }
   ngOnInit() {}
-
+  
   test : string = "tessstt";
   objDate = Date.now();
   
-  
-  
+  fontSize : number = 20;
+  name :string = "Angular";
   
   
 

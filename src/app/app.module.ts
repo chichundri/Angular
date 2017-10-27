@@ -43,6 +43,10 @@ import { ManageBookComponent } from './routing/manage-book/manage-book.component
 import { UpdateBookComponent } from './routing/update-book/update-book.component';
 import { PageNotFoundComponent } from './routing/page-not-found/page-not-found.component';
 import { AppRoutingModule }  from './routing/app-routing.module';
+import { LoginComponent } from './EMS/login/login.component';
+import { RegisterComponent } from './EMS/register/register.component';
+
+
 
 @NgModule({
   declarations: [
@@ -81,7 +85,9 @@ import { AppRoutingModule }  from './routing/app-routing.module';
     AddBookComponent,
     ManageBookComponent,
     UpdateBookComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent,
+    RegisterComponent
     
   ],
   entryComponents: [ 

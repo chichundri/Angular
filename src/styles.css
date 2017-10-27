@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+/* @import "~bootstrap/dist/css/bootstrap.css"; */
 .employee {
 	border: 2px solid blue;
 	width: 275px;
@@ -31,3 +34,7 @@
 	background-color: #EEF4F5;	
 	width: 350px;
 } 
+
+.shadow {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

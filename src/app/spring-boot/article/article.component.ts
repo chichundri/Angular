@@ -42,7 +42,7 @@ export class ArticleComponent implements OnInit {
         return; //Validation failed, exit from method.
    }   
    //Form is valid, now perform create or update
-         this.preProcessConfigurations();
+   this.preProcessConfigurations();
    let title = this.articleForm.get('title').value.trim();
    let category = this.articleForm.get('category').value.trim();	  
    if (this.articleIdToUpdate === null) {  
