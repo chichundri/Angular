@@ -8,8 +8,8 @@ import { Article } from './article';
 export class ArticleService {
   constructor(private http: Http) { }
 
-  allArticlesUrl = "";
-  articleUrl = "";
+  allArticlesUrl = "http://localhost:8090/BootDemo/user/all-articles";
+  articleUrl = "http://localhost:8090/BootDemo/user/article";
 
   getAllArticles(): Observable<Article[]> {
     return this.http.get(this.allArticlesUrl)
@@ -35,7 +35,7 @@ export class ArticleService {
         return this.http.get(this.articleUrl, options)
           .map(this.extractData)
           .catch(this.handleError);
-      }	
+      }
       //Update article
       updateArticle(article: Article):Observable<number> {
     let cpHeaders = new Headers({ 'Content-Type': 'application/json' });

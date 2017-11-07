@@ -36,16 +36,25 @@ import { SyntaxComponent } from './syntax/syntax.component';
 import { ExpressionComponent } from './expression/expression.component';
 import { AttributeComponent } from './attribute/attribute.component';
 import { SampleComponent } from './sample/sample.component';
-import { HomeComponent } from './routing/home/home.component';
-import { ViewDetailComponent } from './routing/view-detail/view-detail.component';
-import { AddBookComponent } from './routing/add-book/add-book.component';
-import { ManageBookComponent } from './routing/manage-book/manage-book.component';
-import { UpdateBookComponent } from './routing/update-book/update-book.component';
-import { PageNotFoundComponent } from './routing/page-not-found/page-not-found.component';
-import { AppRoutingModule }  from './routing/app-routing.module';
+// import { HomeComponent } from './routing/home/home.component';
+// import { ViewDetailComponent } from './routing/view-detail/view-detail.component';
+// import { AddBookComponent } from './routing/add-book/add-book.component';
+// import { ManageBookComponent } from './routing/manage-book/manage-book.component';
+// import { UpdateBookComponent } from './routing/update-book/update-book.component';
+// import { PageNotFoundComponent } from './routing/page-not-found/page-not-found.component';
+// import { AppRoutingModule }  from './routing/app-routing.module';
 import { LoginComponent } from './EMS/login/login.component';
 import { RegisterComponent } from './EMS/register/register.component';
-
+import { LoginService } from './EMS/services/login.service';
+import { HttpModule } from '@angular/http';
+import { DashboardComponent } from './EMS/dashboard/dashboard.component';
+import { RouterModule, Routes } from '@angular/router';
+import { appRoutes } from './routes';
+import { NavbarComponent } from './EMS/navbar/navbar.component';
+import { RegisterService } from './EMS/services/register.service';
+import { DateFormatPipe } from './EMS/util/date-format.pipe';
+import { DatePipe } from '@angular/common';
+import { ModalComponent } from './EMS/directives/modal/modal.component';
 
 
 @NgModule({
@@ -80,14 +89,18 @@ import { RegisterComponent } from './EMS/register/register.component';
     SyntaxComponent,
     AttributeComponent,
     SampleComponent,
-    HomeComponent,
-    ViewDetailComponent,
-    AddBookComponent,
-    ManageBookComponent,
-    UpdateBookComponent,
-    PageNotFoundComponent,
+    // HomeComponent,
+    // ViewDetailComponent,
+    // AddBookComponent,
+    // ManageBookComponent,
+    // UpdateBookComponent,
+    // PageNotFoundComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    DashboardComponent,
+    NavbarComponent,
+    DateFormatPipe,
+    ModalComponent
     
   ],
   entryComponents: [ 
@@ -95,9 +108,15 @@ import { RegisterComponent } from './EMS/register/register.component';
       TechnologyComponent 
     ],
   imports: [
-    BrowserModule, FormsModule, ReactiveFormsModule,AppRoutingModule
+    BrowserModule, FormsModule, ReactiveFormsModule,HttpModule, RouterModule.forRoot(appRoutes)
   ],
-  providers: [TeamManagementService,MypostService,UserServiceService],
+  providers: [TeamManagementService,
+    MypostService,
+    UserServiceService,
+    LoginService,
+    RegisterService,
+    DatePipe
+  ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

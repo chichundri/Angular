@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup,FormBuilder, Validators, FormControl } from '@angular/forms';
 
+import { LoginService } from '../services/login.service';
+import { Employee }  from '../model/employee';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,12 +10,15 @@ import { FormGroup,FormBuilder, Validators, FormControl } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   processValidation : boolean = false;
+  statusCode: number;
+  employee: Employee[];
+
   loginForm = new FormGroup({
     userId: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required)	
   })
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private loginService: LoginService) {
     
   }
 
@@ -29,17 +34,24 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return; //Validation failed, exit from method.
     }
+
+    let userId = this.loginForm.get('userId').value.trim();
+    let password = this.loginForm.get('password').value.trim();
     
+    this.loginService.login(userId,password).subscribe(
+      data => {
+        if(data.errorMsg != "" && data.errorMsg != null){
+          alert(data.errorMsg);
+        } else {
+          console.log(data);
+        }
+      },      
+    );
   }
+
 
   onReset() {
     this.loginForm.reset();
     this.loginForm.pristine;
-  }
-
-  log(val) { 
-    // console.log(val);
-    // console.log(JSON.stringify(this.loginForm.value));
-    
   }
 }

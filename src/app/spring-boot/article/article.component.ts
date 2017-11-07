@@ -49,10 +49,10 @@ export class ArticleComponent implements OnInit {
      //Handle create article
      let article= new Article(null, title, category);	  
      this.articleService.createArticle(article)
-       .subscribe(successCode => {
-                 this.statusCode = successCode;
-           this.getAllArticles();	
-           this.backToCreateArticle();
+      .subscribe(successCode => {
+        this.statusCode = successCode;
+        this.getAllArticles();	
+        this.backToCreateArticle();
      },
            errorCode => this.statusCode = errorCode);
    } else {  
@@ -61,7 +61,7 @@ export class ArticleComponent implements OnInit {
      this.articleService.updateArticle(article)
        .subscribe(successCode => {
            this.statusCode = successCode;
-           this.getAllArticles();	
+           this.getAllArticles();
            this.backToCreateArticle();
      },
            errorCode => this.statusCode = errorCode);	  

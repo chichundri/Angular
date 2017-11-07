@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" style = "margin-top:7%;">
     <div class="col-md-3 col-md-offset-3"></div>
       <form class="col-md-5 shadow" novalidate [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmit()">
         <div class="form-group">
@@ -14,8 +14,8 @@
         <div class="form-group">
           <button class="btn btn-success">Login</button>  
           <button class="btn btn-primary" (click)="onReset()">Reset</button>  
-          Don't have Account? <a href="#">Register !!</a> here.
+          Don't have Account? <a routerLink = "/register">Register !!</a> here.
         </div>
       </form>
   </div>
-  {{log()}}
+  
